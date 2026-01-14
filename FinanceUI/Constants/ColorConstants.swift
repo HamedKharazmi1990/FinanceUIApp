@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let backgroundX = Color("BackgroundX")
+let darkBackground2 = Color("BackgroundX")
 let darkBackground = Color("DarkBackground")
 let fontColor = Color("FontColor")
 let purple = Color("purple")

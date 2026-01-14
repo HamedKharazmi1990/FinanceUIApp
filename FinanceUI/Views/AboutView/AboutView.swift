@@ -33,7 +33,7 @@ struct xView: View {
                 .font(.title)
                 .padding()
                 .foregroundStyle(fontColor)
-                .background(backgroundX)
+                .background(darkBackground2)
                 .cornerRadius(20)
         }
     }
@@ -46,7 +46,7 @@ struct AvatarView: View {
                 .resizable()
                 .frame(width: 30, height: 30)
                 .foregroundColor(fontColor)
-                .background(backgroundX)
+                .background(darkBackground2)
                 .clipShape(Circle())
                 
             TextView(text: "Hamed Kharazmi", font: .title)
