@@ -13,7 +13,10 @@ struct CreditCardPageView: View {
             darkBackground
                 .ignoresSafeArea()
             
-            VStack {
+            VStack(alignment: .leading) {
+                
+                TopView()
+                
                 YourCardsView(numActiveCard: 3)
                 
                 CreditCardView(
@@ -22,9 +25,12 @@ struct CreditCardPageView: View {
                     expiryMonth: 10,
                     expiryYear: 2030)
                 
-                VStack(alignment: .leading, spacing: 0) {
-                    TextView(text: "Recent Transactions", font: .title)
-                }
+                TextView(
+                    text: "Recent Transactions",
+                    font: .title2.bold()
+                ).padding()
+                
+                Spacer()
             }
         }
     }
