@@ -9,7 +9,24 @@ import SwiftUI
 
 struct CreditCardPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            darkBackground
+                .ignoresSafeArea()
+            
+            VStack {
+                YourCardsView(numActiveCard: 3)
+                
+                CreditCardView(
+                    creditCardNumber: "4576 1144 6433 8212",
+                    name: "Hamed Kharazmi",
+                    expiryMonth: 10,
+                    expiryYear: 2030)
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    TextView(text: "Recent Transactions", font: .title)
+                }
+            }
+        }
     }
 }
 

@@ -55,17 +55,6 @@ struct AvatarView: View {
     }
 }
 
-struct TextView: View {
-    let text: String
-    let font: Font
-    
-    var body: some View {
-        Text(text)
-            .foregroundColor(fontColor)
-            .font(font)
-    }
-}
-
 struct ChoicesView: View {
     
     let dataArray: [(String, String, String?)] = [
