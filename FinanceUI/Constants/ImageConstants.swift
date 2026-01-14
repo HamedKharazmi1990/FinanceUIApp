@@ -9,3 +9,6 @@ import Foundation
 import SwiftUI
 
 let goldChip = "GoldChip-2"
+let wrenchIcon = "admin"
+let hamburgerIcon = "hamburger"
+let paypalIcon = "paypal"
