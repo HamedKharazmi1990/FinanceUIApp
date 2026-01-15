@@ -25,12 +25,28 @@ struct YourBalanceView: View {
 }
 
 struct HeaderYourBalanceView: View {
+    let dim: CGFloat = 50
     var body: some View {
         HStack {
-            TextView(text: "1", font: .title)
+            Image(systemName: "line.horizontal.3.decrease")
+                .font(.body.weight(.heavy))
+                .frame(width: dim, height: dim)
+                .foregroundStyle(fontColor)
             Spacer()
-            TextView(text: "2", font: .title)
+            AvatarDefaultView(dim: 30)
         }.padding()
+    }
+}
+
+struct AvatarDefaultView: View {
+    let dim: CGFloat
+    var body: some View {
+        Image(systemName: "person.crop.circle")
+            .resizable()
+            .frame(width: dim, height: dim)
+            .foregroundStyle(fontColor)
+            .background(darkBackground2)
+            .clipShape(Circle())
     }
 }
 
