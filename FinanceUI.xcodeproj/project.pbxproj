@@ -16,6 +16,11 @@
 			path = FinanceUI;
 			sourceTree = "<group>";
 		};
+		23A54F1F2F196D050017D9E1 /* assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = assets;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 		23A54EE42F10330B0017D9E1 = {
 			isa = PBXGroup;
 			children = (
+				23A54F1F2F196D050017D9E1 /* assets */,
 				23A54EEF2F10330B0017D9E1 /* FinanceUI */,
 				23A54EEE2F10330B0017D9E1 /* Products */,
 			);
@@ -62,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				23A54EEF2F10330B0017D9E1 /* FinanceUI */,
+				23A54F1F2F196D050017D9E1 /* assets */,
 			);
 			name = FinanceUI;
 			packageProductDependencies = (
