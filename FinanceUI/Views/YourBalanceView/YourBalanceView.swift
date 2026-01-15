@@ -31,6 +31,8 @@ struct YourBalanceView: View {
                 
                 ActivitiesOfTheWeekHeader()
                 
+                MonthlyExpensesView()
+                
                 Spacer()
             }
         }
@@ -170,6 +172,27 @@ struct BalanceSubView: View {
         HStack {
             TextView(text: "Your Balance", font: .title)
             Spacer()
+        }.padding()
+    }
+}
+
+struct MonthlyExpensesView: View {
+    let barData: [(month: String, percentage: CGFloat)] = [
+        (month: "Jan", percentage: 0.67),
+        (month: "Feb", percentage: 0.44),
+        (month: "Mar", percentage: 0.26),
+        (month: "Apr", percentage: 0.88),
+        (month: "May", percentage: 0.56),
+        (month: "Jun", percentage: 0.14)
+    ]
+    var body: some View {
+        HStack {
+            ForEach(barData.indices, id: \.self) { i in
+                FillBarView(
+                    month: barData[i].month,
+                    percentage: barData[i].percentage
+                )
+            }
         }.padding()
     }
 }
