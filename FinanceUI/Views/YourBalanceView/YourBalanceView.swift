@@ -18,6 +18,15 @@ struct YourBalanceView: View {
                 
                 BalanceSubView()
                 
+                YourBalanceAmountView(
+                    month: 1,
+                    day: 15,
+                    year: 2026,
+                    amount: 23806.04,
+                    percentage: 15,
+                    isUp: true
+                )
+                
                 Spacer()
             }
         }
@@ -35,6 +44,49 @@ struct HeaderYourBalanceView: View {
             Spacer()
             AvatarDefaultView(dim: 30)
         }.padding()
+    }
+}
+
+struct YourBalanceAmountView: View {
+    let month: Int
+    let day: Int
+    let year: Int
+    let amount: Double
+    let percentage: Int
+    let isUp: Bool
+    
+    var body: some View {
+        HStack {
+            VStack(spacing: 10) {
+                if month >= 1 && month <= 12 {
+                    let cal = Calendar.current
+                    let monthName = cal.monthSymbols[month-1]
+
+                    HStack {
+                        TextView(text: "\(monthName) \(day), \(year)", font: .caption)
+                        Spacer()
+                    }
+                }
+                
+                HStack {
+                    Text("$\(amount, specifier: "%.2f")")
+                        .foregroundStyle(fontColor)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                    TextView(text: "\(percentage)%", font: .caption)
+                    
+                    let imageName = isUp ? "arrow.up" : "arrow.down"
+                    Image(systemName: imageName)
+                        .foregroundStyle(fontColor)
+                        .font(.caption)
+                }
+            }
+        }.padding()
+            .background(darkBackground2)
+            .cornerRadius(20)
     }
 }
 
