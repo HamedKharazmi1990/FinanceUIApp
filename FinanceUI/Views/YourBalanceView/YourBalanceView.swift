@@ -27,8 +27,50 @@ struct YourBalanceView: View {
                     isUp: true
                 )
                 
+                YourBalanceActionsView()
+                
                 Spacer()
             }
+        }
+    }
+}
+
+struct YourBalanceActionsView: View {
+    let actionList: [(iconName: String, name: String, color: Color)] = [
+        (iconName: "arrow.up", name: "Sent", color: .pink),
+        (iconName: "arrow.down", name: "Receive", color: .green),
+        (iconName: "dollarsign.square", name: "Loan", color: .yellow),
+        (iconName: "icloud.and.arrow.up", name: "Topup", color: .blue)
+    ]
+    var body: some View {
+        HStack {
+            Spacer()
+            ForEach(0 ..< actionList.count, id: \.self) { i in
+                ActionView(
+                    iconName: actionList[i].iconName,
+                    color: actionList[i].color,
+                    name: actionList[i].name
+                )
+                Spacer()
+            }
+        }.padding()
+    }
+}
+
+struct ActionView: View {
+    let iconName: String
+    let color: Color
+    let name: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: iconName)
+                .foregroundStyle(color)
+                .frame(width: 50, height: 50)
+                .background(darkBackground2)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+            
+            TextView(text: name, font: .body)
         }
     }
 }
