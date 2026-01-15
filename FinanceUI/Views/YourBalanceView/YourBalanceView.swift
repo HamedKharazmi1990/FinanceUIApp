@@ -29,9 +29,30 @@ struct YourBalanceView: View {
                 
                 YourBalanceActionsView()
                 
+                ActivitiesOfTheWeekHeader()
+                
                 Spacer()
             }
         }
+    }
+}
+
+struct ActivitiesOfTheWeekHeader: View {
+    var body: some View {
+        HStack {
+            Text("Activities")
+                .foregroundStyle(.white)
+                .font(.title3.weight(.semibold))
+            
+            Spacer()
+            TextView(text: "This Week", font: .caption)
+                .padding(7)
+                .padding(.horizontal)
+                .background(darkBackground2)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
 
@@ -112,7 +133,7 @@ struct YourBalanceAmountView: View {
                 
                 HStack {
                     Text("$\(amount, specifier: "%.2f")")
-                        .foregroundStyle(fontColor)
+                        .foregroundStyle(white)
                         .font(.title)
                         .fontWeight(.bold)
                     
